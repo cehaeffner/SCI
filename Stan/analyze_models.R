@@ -147,51 +147,49 @@ for (m in models) {
   # Overall choice rate
   p <- ppc_stat(y_obs, y_pred, stat = "mean") +
     ggtitle(paste(m$name, "- PPC: Overall choice rate"))
-  ggsave(paste0(m$name, "_ppc_overall.png"), p)
-  
+
   # By subject
   p <- ppc_stat_grouped(
     y_obs, y_pred,
     group = as.character(m$data$subid),
     stat  = "mean"
   ) + ggtitle(paste(m$name, "- PPC: Choice rate by subject"))
-  ggsave(paste0(m$name, "_ppc_by_subject.png"), p, width = 10, height = 6)
-  
-  # Task-specific grouping variable
+  print(p)
+
+# Task-specific grouping variable
   if (m$is_rdm) {
-    # RDM: group by gain and cert bins
     p <- ppc_stat_grouped(
       y_obs, y_pred,
       group = as.character(cut(m$data$gain, breaks = 5)),
       stat  = "mean"
     ) + ggtitle(paste(m$name, "- PPC: Gamble rate by gain bin"))
-    ggsave(paste0(m$name, "_ppc_by_gain.png"), p, width = 10, height = 6)
-    
+    print(p)
+
     p <- ppc_stat_grouped(
       y_obs, y_pred,
       group = as.character(cut(m$data$cert, breaks = 5)),
       stat  = "mean"
     ) + ggtitle(paste(m$name, "- PPC: Gamble rate by cert bin"))
-    ggsave(paste0(m$name, "_ppc_by_cert.png"), p, width = 10, height = 6)
-    
+    print(p)
+
   } else {
-    # DD: group by delay and amount ratio bins
     p <- ppc_stat_grouped(
       y_obs, y_pred,
       group = as.character(cut(m$data$delay_later, breaks = 5)),
       stat  = "mean"
     ) + ggtitle(paste(m$name, "- PPC: Choice rate by delay bin"))
-    ggsave(paste0(m$name, "_ppc_by_delay.png"), p, width = 10, height = 6)
-    
+    print(p)
+
     p <- ppc_stat_grouped(
       y_obs, y_pred,
       group = as.character(cut(m$data$amount_later / m$data$amount_sooner, breaks = 5)),
       stat  = "mean"
     ) + ggtitle(paste(m$name, "- PPC: Choice rate by amount ratio bin"))
-    ggsave(paste0(m$name, "_ppc_by_amount_ratio.png"), p, width = 10, height = 6)
+    print(p)
   }
-  
-  cat("PPC plots saved for", m$name, "\n")
+
+  cat("PPC plots printed for", m$name, "\n")
 }
 
 cat("\n=== Analysis complete ===\n")
+
