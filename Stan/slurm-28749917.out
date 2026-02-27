@@ -76,3 +76,121 @@ Chain 3: Iteration:  1001 / 11000 [  9%]  (Sampling)
 Chain 1: Iteration:  2100 / 11000 [ 19%]  (Sampling)
 Chain 2: Iteration:  2100 / 11000 [ 19%]  (Sampling)
 Chain 4: Iteration:  2100 / 11000 [ 19%]  (Sampling)
+Chain 3: Iteration:  2100 / 11000 [ 19%]  (Sampling)
+Chain 1: Iteration:  3200 / 11000 [ 29%]  (Sampling)
+Chain 2: Iteration:  3200 / 11000 [ 29%]  (Sampling)
+Chain 4: Iteration:  3200 / 11000 [ 29%]  (Sampling)
+Chain 3: Iteration:  3200 / 11000 [ 29%]  (Sampling)
+Chain 1: Iteration:  4300 / 11000 [ 39%]  (Sampling)
+Chain 2: Iteration:  4300 / 11000 [ 39%]  (Sampling)
+Chain 4: Iteration:  4300 / 11000 [ 39%]  (Sampling)
+Chain 3: Iteration:  4300 / 11000 [ 39%]  (Sampling)
+Chain 1: Iteration:  5400 / 11000 [ 49%]  (Sampling)
+Chain 2: Iteration:  5400 / 11000 [ 49%]  (Sampling)
+Chain 4: Iteration:  5400 / 11000 [ 49%]  (Sampling)
+Chain 3: Iteration:  5400 / 11000 [ 49%]  (Sampling)
+Chain 1: Iteration:  6500 / 11000 [ 59%]  (Sampling)
+Chain 2: Iteration:  6500 / 11000 [ 59%]  (Sampling)
+Chain 4: Iteration:  6500 / 11000 [ 59%]  (Sampling)
+Chain 3: Iteration:  6500 / 11000 [ 59%]  (Sampling)
+Chain 1: Iteration:  7600 / 11000 [ 69%]  (Sampling)
+Chain 2: Iteration:  7600 / 11000 [ 69%]  (Sampling)
+Chain 4: Iteration:  7600 / 11000 [ 69%]  (Sampling)
+Chain 3: Iteration:  7600 / 11000 [ 69%]  (Sampling)
+Chain 1: Iteration:  8700 / 11000 [ 79%]  (Sampling)
+Chain 2: Iteration:  8700 / 11000 [ 79%]  (Sampling)
+Chain 4: Iteration:  8700 / 11000 [ 79%]  (Sampling)
+Chain 3: Iteration:  8700 / 11000 [ 79%]  (Sampling)
+Chain 1: Iteration:  9800 / 11000 [ 89%]  (Sampling)
+Chain 2: Iteration:  9800 / 11000 [ 89%]  (Sampling)
+Chain 4: Iteration:  9800 / 11000 [ 89%]  (Sampling)
+Chain 3: Iteration:  9800 / 11000 [ 89%]  (Sampling)
+Chain 1: Iteration: 10900 / 11000 [ 99%]  (Sampling)
+Chain 1: Iteration: 11000 / 11000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 324.841 seconds (Warm-up)
+Chain 1:                2237.37 seconds (Sampling)
+Chain 1:                2562.21 seconds (Total)
+Chain 1: 
+Chain 2: Iteration: 10900 / 11000 [ 99%]  (Sampling)
+Chain 2: Iteration: 11000 / 11000 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 346.113 seconds (Warm-up)
+Chain 2:                2240.6 seconds (Sampling)
+Chain 2:                2586.71 seconds (Total)
+Chain 2: 
+Chain 4: Iteration: 10900 / 11000 [ 99%]  (Sampling)
+Chain 4: Iteration: 11000 / 11000 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 394.633 seconds (Warm-up)
+Chain 4:                2226.94 seconds (Sampling)
+Chain 4:                2621.57 seconds (Total)
+Chain 4: 
+Chain 3: Iteration: 10900 / 11000 [ 99%]  (Sampling)
+Chain 3: Iteration: 11000 / 11000 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 444.493 seconds (Warm-up)
+Chain 3:                2229.07 seconds (Sampling)
+Chain 3:                2673.56 seconds (Total)
+Chain 3: 
+Inference for Stan model: DD-SVD-H.
+4 chains, each with iter=11000; warmup=1000; thin=1; 
+post-warmup draws per chain=10000, total post-warmup draws=40000.
+
+    mean se_mean   sd  2.5%   25%   50%   75% 97.5% n_eff Rhat
+km  3.48    0.00 0.38  2.78  3.21  3.46  3.73  4.29 47706    1
+gm -2.97    0.01 0.26 -3.50 -3.14 -2.97 -2.80 -2.49  2622    1
+ks  0.40    0.00 0.22  0.08  0.23  0.35  0.52  0.94 52236    1
+gs  2.56    0.00 0.25  2.12  2.38  2.54  2.71  3.10  3370    1
+
+Samples were drawn using NUTS(diag_e) at Thu Feb 26 23:17:36 2026.
+For each parameter, n_eff is a crude measure of effective sample size,
+and Rhat is the potential scale reduction factor on split chains (at 
+convergence, Rhat=1).
+Summary saved.
+            used   (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells   1865198   99.7    4295797   229.5    4295797   229.5
+Vcells 997349244 7609.2 3958091600 30197.9 4947614499 37747.4
+Fit object freed from memory.
+Warning message:
+Some Pareto k diagnostic values are too high. See help('pareto-k-diagnostic') for details.
+ 
+Warning message:
+
+29 (0.2%) p_waic estimates greater than 0.4. We recommend trying loo instead. 
+
+Computed from 40000 by 12288 log-likelihood matrix
+
+         Estimate   SE
+elpd_loo  -7260.0 47.7
+p_loo       107.6  4.0
+looic     14519.9 95.4
+------
+Monte Carlo SE of elpd_loo is NA.
+
+Pareto k diagnostic values:
+                         Count Pct.    Min. n_eff
+(-Inf, 0.5]   (good)     12243 99.6%   10447     
+ (0.5, 0.7]   (ok)          14  0.1%   30023     
+   (0.7, 1]   (bad)          9  0.1%   32440     
+   (1, Inf)   (very bad)    22  0.2%   25958     
+See help('pareto-k-diagnostic') for details.
+
+Computed from 40000 by 12288 log-likelihood matrix
+
+          Estimate   SE
+elpd_waic  -7259.4 47.6
+p_waic       107.0  4.0
+waic       14518.8 95.3
+
+29 (0.2%) p_waic estimates greater than 0.4. We recommend trying loo instead. 
+LOO and WAIC saved.
+            used   (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells   1858466   99.3    4295797   229.5    4295797   229.5
+Vcells 505793049 3858.9 3654894887 27884.7 5710773260 43569.8
+y_pred saved.
+           used  (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells  1858456  99.3    4295797   229.5    4295797   229.5
+Vcells 14273039 108.9 2923915910 22307.8 5710773260 43569.8
+Posterior saved.
+=== Done: 3-DD-SVD-H ===

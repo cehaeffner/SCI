@@ -1,0 +1,197 @@
+Lmod Warning:
+-------------------------------------------------------------------------------
+The following dependent module(s) are not currently loaded:
+Eigen/3.3.9-GCCcore-10.2.0 (required by: R/4.2.0-foss-2020b)
+-------------------------------------------------------------------------------
+
+
+
+
+The following have been reloaded with a version change:
+  1) Eigen/3.3.9-GCCcore-10.2.0 => Eigen/3.3.8-GCCcore-10.2.0
+
+Loading required package: StanHeaders
+Loading required package: ggplot2
+rstan (Version 2.21.5, GitRev: 2e1f913d3ca3)
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+This is loo version 2.5.1
+- Online documentation and vignettes at mc-stan.org/loo
+- As of v2.0.0 loo defaults to 1 core but we recommend using as many as possible. Use the 'cores' argument or set options(mc.cores = NUM_CORES) for an entire session. 
+
+Attaching package: ‘loo’
+
+The following object is masked from ‘package:rstan’:
+
+    loo
+
+Fitting model: 3-DD-SVR-H 
+Task:        DD (delay discounting) 
+Model type:  SVR (mu) 
+Stan file:   DD-SVR-H.stan 
+Data file:   3-DD.json 
+Data loaded: 12288 trials, 128 subjects
+
+SAMPLING FOR MODEL 'DD-SVR-H' NOW (CHAIN 1).
+
+SAMPLING FOR MODEL 'DD-SVR-H' NOW (CHAIN 2).
+
+SAMPLING FOR MODEL 'DD-SVR-H' NOW (CHAIN 3).
+
+SAMPLING FOR MODEL 'DD-SVR-H' NOW (CHAIN 4).
+Chain 1: 
+Chain 1: Gradient evaluation took 0.008438 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 84.38 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 2: 
+Chain 2: Gradient evaluation took 0.00868 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 86.8 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 3: 
+Chain 3: Gradient evaluation took 0.009006 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 90.06 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+Chain 4: 
+Chain 4: Gradient evaluation took 0.008726 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 87.26 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 3: Iteration:     1 / 11000 [  0%]  (Warmup)
+Chain 1: Iteration:     1 / 11000 [  0%]  (Warmup)
+Chain 2: Iteration:     1 / 11000 [  0%]  (Warmup)
+Chain 4: Iteration:     1 / 11000 [  0%]  (Warmup)
+Chain 4: Iteration:  1001 / 11000 [  9%]  (Sampling)
+Chain 2: Iteration:  1001 / 11000 [  9%]  (Sampling)
+Chain 1: Iteration:  1001 / 11000 [  9%]  (Sampling)
+Chain 3: Iteration:  1001 / 11000 [  9%]  (Sampling)
+Chain 2: Iteration:  2100 / 11000 [ 19%]  (Sampling)
+Chain 4: Iteration:  2100 / 11000 [ 19%]  (Sampling)
+Chain 1: Iteration:  2100 / 11000 [ 19%]  (Sampling)
+Chain 2: Iteration:  3200 / 11000 [ 29%]  (Sampling)
+Chain 4: Iteration:  3200 / 11000 [ 29%]  (Sampling)
+Chain 3: Iteration:  2100 / 11000 [ 19%]  (Sampling)
+Chain 1: Iteration:  3200 / 11000 [ 29%]  (Sampling)
+Chain 2: Iteration:  4300 / 11000 [ 39%]  (Sampling)
+Chain 4: Iteration:  4300 / 11000 [ 39%]  (Sampling)
+Chain 1: Iteration:  4300 / 11000 [ 39%]  (Sampling)
+Chain 2: Iteration:  5400 / 11000 [ 49%]  (Sampling)
+Chain 4: Iteration:  5400 / 11000 [ 49%]  (Sampling)
+Chain 3: Iteration:  3200 / 11000 [ 29%]  (Sampling)
+Chain 1: Iteration:  5400 / 11000 [ 49%]  (Sampling)
+Chain 2: Iteration:  6500 / 11000 [ 59%]  (Sampling)
+Chain 4: Iteration:  6500 / 11000 [ 59%]  (Sampling)
+Chain 2: Iteration:  7600 / 11000 [ 69%]  (Sampling)
+Chain 1: Iteration:  6500 / 11000 [ 59%]  (Sampling)
+Chain 3: Iteration:  4300 / 11000 [ 39%]  (Sampling)
+Chain 4: Iteration:  7600 / 11000 [ 69%]  (Sampling)
+Chain 2: Iteration:  8700 / 11000 [ 79%]  (Sampling)
+Chain 1: Iteration:  7600 / 11000 [ 69%]  (Sampling)
+Chain 4: Iteration:  8700 / 11000 [ 79%]  (Sampling)
+Chain 2: Iteration:  9800 / 11000 [ 89%]  (Sampling)
+Chain 3: Iteration:  5400 / 11000 [ 49%]  (Sampling)
+Chain 4: Iteration:  9800 / 11000 [ 89%]  (Sampling)
+Chain 1: Iteration:  8700 / 11000 [ 79%]  (Sampling)
+Chain 2: Iteration: 10900 / 11000 [ 99%]  (Sampling)
+Chain 2: Iteration: 11000 / 11000 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 770.965 seconds (Warm-up)
+Chain 2:                6093.48 seconds (Sampling)
+Chain 2:                6864.45 seconds (Total)
+Chain 2: 
+Chain 4: Iteration: 10900 / 11000 [ 99%]  (Sampling)
+Chain 1: Iteration:  9800 / 11000 [ 89%]  (Sampling)
+Chain 4: Iteration: 11000 / 11000 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 718.777 seconds (Warm-up)
+Chain 4:                6551.54 seconds (Sampling)
+Chain 4:                7270.32 seconds (Total)
+Chain 4: 
+Chain 3: Iteration:  6500 / 11000 [ 59%]  (Sampling)
+Chain 1: Iteration: 10900 / 11000 [ 99%]  (Sampling)
+Chain 1: Iteration: 11000 / 11000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 817.397 seconds (Warm-up)
+Chain 1:                7263.15 seconds (Sampling)
+Chain 1:                8080.55 seconds (Total)
+Chain 1: 
+Chain 3: Iteration:  7600 / 11000 [ 69%]  (Sampling)
+Chain 3: Iteration:  8700 / 11000 [ 79%]  (Sampling)
+Chain 3: Iteration:  9800 / 11000 [ 89%]  (Sampling)
+Chain 3: Iteration: 10900 / 11000 [ 99%]  (Sampling)
+Chain 3: Iteration: 11000 / 11000 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 847.791 seconds (Warm-up)
+Chain 3:                12245.5 seconds (Sampling)
+Chain 3:                13093.3 seconds (Total)
+Chain 3: 
+Warning messages:
+1: There were 32047 divergent transitions after warmup. See
+https://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup
+to find out why this is a problem and how to eliminate them. 
+2: Examine the pairs() plot to diagnose sampling problems
+ 
+Inference for Stan model: DD-SVR-H.
+4 chains, each with iter=11000; warmup=1000; thin=1; 
+post-warmup draws per chain=10000, total post-warmup draws=40000.
+
+     mean se_mean    sd   2.5%    25%    50%    75%  97.5% n_eff Rhat
+km  -2.85    0.01  1.00  -4.79  -3.52  -2.85  -2.20  -0.90  8373    1
+mm   5.16    0.00  0.15   4.82   5.07   5.18   5.28   5.42  2987    1
+ks 281.01    0.96 45.93 191.81 249.59 281.10 312.13 370.86  2297    1
+ms   0.15    0.00  0.07   0.04   0.10   0.14   0.19   0.31  1230    1
+
+Samples were drawn using NUTS(diag_e) at Fri Feb 27 03:25:10 2026.
+For each parameter, n_eff is a crude measure of effective sample size,
+and Rhat is the potential scale reduction factor on split chains (at 
+convergence, Rhat=1).
+Summary saved.
+            used   (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells   1865104   99.7    4295794   229.5    4295794   229.5
+Vcells 997349109 7609.2 3166478764 24158.4 4796935437 36597.8
+Fit object freed from memory.
+Warning message:
+Some Pareto k diagnostic values are too high. See help('pareto-k-diagnostic') for details.
+ 
+
+Computed from 40000 by 12288 log-likelihood matrix
+
+         Estimate   SE
+elpd_loo  -6914.5 49.2
+p_loo        98.5  1.8
+looic     13828.9 98.5
+------
+Monte Carlo SE of elpd_loo is NA.
+
+Pareto k diagnostic values:
+                         Count Pct.    Min. n_eff
+(-Inf, 0.5]   (good)     12116 98.6%   1324      
+ (0.5, 0.7]   (ok)          43  0.3%   13490     
+   (0.7, 1]   (bad)         25  0.2%   11976     
+   (1, Inf)   (very bad)   104  0.8%   7965      
+See help('pareto-k-diagnostic') for details.
+
+Computed from 40000 by 12288 log-likelihood matrix
+
+          Estimate   SE
+elpd_waic  -6914.4 49.2
+p_waic        98.4  1.8
+waic       13828.8 98.5
+LOO and WAIC saved.
+            used   (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells   1858464   99.3    4295794   229.5    4295794   229.5
+Vcells 505792919 3858.9 3654896372 27884.7 5710775579 43569.8
+y_pred saved.
+           used  (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells  1858454  99.3    4295794   229.5    4295794   229.5
+Vcells 14272909 108.9 2923917098 22307.8 5710775579 43569.8
+Posterior saved.
+=== Done: 3-DD-SVR-H ===
