@@ -1,0 +1,196 @@
+Lmod Warning:
+-------------------------------------------------------------------------------
+The following dependent module(s) are not currently loaded:
+Eigen/3.3.9-GCCcore-10.2.0 (required by: R/4.2.0-foss-2020b)
+-------------------------------------------------------------------------------
+
+
+
+
+The following have been reloaded with a version change:
+  1) Eigen/3.3.9-GCCcore-10.2.0 => Eigen/3.3.8-GCCcore-10.2.0
+
+Loading required package: StanHeaders
+Loading required package: ggplot2
+rstan (Version 2.21.5, GitRev: 2e1f913d3ca3)
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+This is loo version 2.5.1
+- Online documentation and vignettes at mc-stan.org/loo
+- As of v2.0.0 loo defaults to 1 core but we recommend using as many as possible. Use the 'cores' argument or set options(mc.cores = NUM_CORES) for an entire session. 
+
+Attaching package: ‘loo’
+
+The following object is masked from ‘package:rstan’:
+
+    loo
+
+Fitting model: 2-DD-SVR-H 
+Task:        DD (delay discounting) 
+Model type:  SVR (mu) 
+Stan file:   DD-SVR-H.stan 
+Data file:   2-DD.json 
+Data loaded: 7969 trials, 43 subjects
+
+SAMPLING FOR MODEL 'DD-SVR-H' NOW (CHAIN 1).
+
+SAMPLING FOR MODEL 'DD-SVR-H' NOW (CHAIN 2).
+
+SAMPLING FOR MODEL 'DD-SVR-H' NOW (CHAIN 3).
+
+SAMPLING FOR MODEL 'DD-SVR-H' NOW (CHAIN 4).
+Chain 1: 
+Chain 1: Gradient evaluation took 0.0055 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 55 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 4: 
+Chain 4: Gradient evaluation took 0.005512 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 55.12 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 2: 
+Chain 2: Gradient evaluation took 0.005522 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 55.22 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 3: 
+Chain 3: Gradient evaluation took 0.005683 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 56.83 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+Chain 3: Iteration:     1 / 11000 [  0%]  (Warmup)
+Chain 4: Iteration:     1 / 11000 [  0%]  (Warmup)
+Chain 1: Iteration:     1 / 11000 [  0%]  (Warmup)
+Chain 2: Iteration:     1 / 11000 [  0%]  (Warmup)
+Chain 1: Iteration:  1001 / 11000 [  9%]  (Sampling)
+Chain 4: Iteration:  1001 / 11000 [  9%]  (Sampling)
+Chain 2: Iteration:  1001 / 11000 [  9%]  (Sampling)
+Chain 3: Iteration:  1001 / 11000 [  9%]  (Sampling)
+Chain 1: Iteration:  2100 / 11000 [ 19%]  (Sampling)
+Chain 2: Iteration:  2100 / 11000 [ 19%]  (Sampling)
+Chain 1: Iteration:  3200 / 11000 [ 29%]  (Sampling)
+Chain 3: Iteration:  2100 / 11000 [ 19%]  (Sampling)
+Chain 4: Iteration:  2100 / 11000 [ 19%]  (Sampling)
+Chain 2: Iteration:  3200 / 11000 [ 29%]  (Sampling)
+Chain 1: Iteration:  4300 / 11000 [ 39%]  (Sampling)
+Chain 2: Iteration:  4300 / 11000 [ 39%]  (Sampling)
+Chain 3: Iteration:  3200 / 11000 [ 29%]  (Sampling)
+Chain 1: Iteration:  5400 / 11000 [ 49%]  (Sampling)
+Chain 2: Iteration:  5400 / 11000 [ 49%]  (Sampling)
+Chain 4: Iteration:  3200 / 11000 [ 29%]  (Sampling)
+Chain 1: Iteration:  6500 / 11000 [ 59%]  (Sampling)
+Chain 2: Iteration:  6500 / 11000 [ 59%]  (Sampling)
+Chain 3: Iteration:  4300 / 11000 [ 39%]  (Sampling)
+Chain 1: Iteration:  7600 / 11000 [ 69%]  (Sampling)
+Chain 2: Iteration:  7600 / 11000 [ 69%]  (Sampling)
+Chain 4: Iteration:  4300 / 11000 [ 39%]  (Sampling)
+Chain 1: Iteration:  8700 / 11000 [ 79%]  (Sampling)
+Chain 3: Iteration:  5400 / 11000 [ 49%]  (Sampling)
+Chain 2: Iteration:  8700 / 11000 [ 79%]  (Sampling)
+Chain 1: Iteration:  9800 / 11000 [ 89%]  (Sampling)
+Chain 2: Iteration:  9800 / 11000 [ 89%]  (Sampling)
+Chain 4: Iteration:  5400 / 11000 [ 49%]  (Sampling)
+Chain 3: Iteration:  6500 / 11000 [ 59%]  (Sampling)
+Chain 1: Iteration: 10900 / 11000 [ 99%]  (Sampling)
+Chain 1: Iteration: 11000 / 11000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 278.64 seconds (Warm-up)
+Chain 1:                2238.83 seconds (Sampling)
+Chain 1:                2517.47 seconds (Total)
+Chain 1: 
+Chain 2: Iteration: 10900 / 11000 [ 99%]  (Sampling)
+Chain 2: Iteration: 11000 / 11000 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 333.38 seconds (Warm-up)
+Chain 2:                2292.11 seconds (Sampling)
+Chain 2:                2625.49 seconds (Total)
+Chain 2: 
+Chain 4: Iteration:  6500 / 11000 [ 59%]  (Sampling)
+Chain 3: Iteration:  7600 / 11000 [ 69%]  (Sampling)
+Chain 3: Iteration:  8700 / 11000 [ 79%]  (Sampling)
+Chain 4: Iteration:  7600 / 11000 [ 69%]  (Sampling)
+Chain 3: Iteration:  9800 / 11000 [ 89%]  (Sampling)
+Chain 4: Iteration:  8700 / 11000 [ 79%]  (Sampling)
+Chain 3: Iteration: 10900 / 11000 [ 99%]  (Sampling)
+Chain 3: Iteration: 11000 / 11000 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 337.304 seconds (Warm-up)
+Chain 3:                3898.74 seconds (Sampling)
+Chain 3:                4236.05 seconds (Total)
+Chain 3: 
+Chain 4: Iteration:  9800 / 11000 [ 89%]  (Sampling)
+Chain 4: Iteration: 10900 / 11000 [ 99%]  (Sampling)
+Chain 4: Iteration: 11000 / 11000 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 291.081 seconds (Warm-up)
+Chain 4:                4717.91 seconds (Sampling)
+Chain 4:                5008.99 seconds (Total)
+Chain 4: 
+Inference for Stan model: DD-SVR-H.
+4 chains, each with iter=11000; warmup=1000; thin=1; 
+post-warmup draws per chain=10000, total post-warmup draws=40000.
+
+    mean se_mean   sd  2.5%   25%   50%   75% 97.5% n_eff Rhat
+km -3.55    0.01 0.32 -4.18 -3.77 -3.55 -3.33 -2.92  2429    1
+mm -1.06    0.00 0.12 -1.31 -1.15 -1.06 -0.98 -0.82  4822    1
+ks  2.17    0.00 0.29  1.69  1.96  2.14  2.35  2.81  6802    1
+ms  0.78    0.00 0.10  0.62  0.71  0.77  0.84  1.00  8461    1
+
+Samples were drawn using NUTS(diag_e) at Thu Feb 26 19:28:44 2026.
+For each parameter, n_eff is a crude measure of effective sample size,
+and Rhat is the potential scale reduction factor on split chains (at 
+convergence, Rhat=1).
+Summary saved.
+            used   (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells   1847650   98.7    3982521   212.7    3982521   212.7
+Vcells 644995800 4921.0 2035463084 15529.4 3180411068 24264.7
+Fit object freed from memory.
+Warning message:
+Some Pareto k diagnostic values are too high. See help('pareto-k-diagnostic') for details.
+ 
+Warning message:
+
+7 (0.1%) p_waic estimates greater than 0.4. We recommend trying loo instead. 
+
+Computed from 40000 by 7969 log-likelihood matrix
+
+         Estimate   SE
+elpd_loo  -2486.3 49.3
+p_loo        78.3  5.0
+looic      4972.5 98.6
+------
+Monte Carlo SE of elpd_loo is NA.
+
+Pareto k diagnostic values:
+                         Count Pct.    Min. n_eff
+(-Inf, 0.5]   (good)     7869  98.7%   4814      
+ (0.5, 0.7]   (ok)         46   0.6%   31728     
+   (0.7, 1]   (bad)        26   0.3%   33948     
+   (1, Inf)   (very bad)   28   0.4%   18        
+See help('pareto-k-diagnostic') for details.
+
+Computed from 40000 by 7969 log-likelihood matrix
+
+          Estimate   SE
+elpd_waic  -2485.1 49.1
+p_waic        77.1  4.3
+waic        4970.1 98.2
+
+7 (0.1%) p_waic estimates greater than 0.4. We recommend trying loo instead. 
+LOO and WAIC saved.
+            used   (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells   1845337   98.6    3982521   212.7    3982521   212.7
+Vcells 326216918 2488.9 2369120674 18075.0 3701751052 28242.2
+y_pred saved.
+          used (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells 1845327 98.6    3982521   212.7    3982521   212.7
+Vcells 7456908 56.9 1895296540 14460.0 3701751052 28242.2
+Posterior saved.
+=== Done: 2-DD-SVR-H ===
