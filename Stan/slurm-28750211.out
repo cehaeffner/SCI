@@ -119,3 +119,94 @@ Chain 3:                626.245 seconds (Total)
 Chain 3: 
 Chain 1: Iteration:  1001 / 11000 [  9%]  (Sampling)
 Chain 1: Iteration:  2100 / 11000 [ 19%]  (Sampling)
+Chain 1: Iteration:  3200 / 11000 [ 29%]  (Sampling)
+Chain 1: Iteration:  4300 / 11000 [ 39%]  (Sampling)
+Chain 1: Iteration:  5400 / 11000 [ 49%]  (Sampling)
+Chain 1: Iteration:  6500 / 11000 [ 59%]  (Sampling)
+Chain 1: Iteration:  7600 / 11000 [ 69%]  (Sampling)
+Chain 1: Iteration:  8700 / 11000 [ 79%]  (Sampling)
+Chain 1: Iteration:  9800 / 11000 [ 89%]  (Sampling)
+Chain 1: Iteration: 10900 / 11000 [ 99%]  (Sampling)
+Chain 1: Iteration: 11000 / 11000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 5105.63 seconds (Warm-up)
+Chain 1:                52118.4 seconds (Sampling)
+Chain 1:                57224.1 seconds (Total)
+Chain 1: 
+Warning messages:
+1: There were 10000 transitions after warmup that exceeded the maximum treedepth. Increase max_treedepth above 12. See
+https://mc-stan.org/misc/warnings.html#maximum-treedepth-exceeded 
+2: There were 1 chains where the estimated Bayesian Fraction of Missing Information was low. See
+https://mc-stan.org/misc/warnings.html#bfmi-low 
+3: Examine the pairs() plot to diagnose sampling problems
+ 
+4: The largest R-hat is NA, indicating chains have not mixed.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#r-hat 
+5: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#bulk-ess 
+6: Tail Effective Samples Size (ESS) is too low, indicating posterior variances and tail quantiles may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#tail-ess 
+Inference for Stan model: RDM-SVR-H.
+4 chains, each with iter=11000; warmup=1000; thin=1; 
+post-warmup draws per chain=10000, total post-warmup draws=40000.
+
+    mean se_mean   sd  2.5%   25%   50%   75% 97.5% n_eff  Rhat
+am  0.13    0.70 1.00 -0.63 -0.49 -0.40  0.44  1.85     2 12.35
+mm -1.58    0.05 0.09 -1.69 -1.69 -1.58 -1.51 -1.40     4  1.41
+as  1.26    0.76 1.08  0.52  0.60  0.67  1.60  3.13     2 17.15
+ms  1.28    1.02 1.45  0.32  0.41  0.47  1.58  3.82     2 23.93
+
+Samples were drawn using NUTS(diag_e) at Sat Feb 28 05:10:35 2026.
+For each parameter, n_eff is a crude measure of effective sample size,
+and Rhat is the potential scale reduction factor on split chains (at 
+convergence, Rhat=1).
+Summary saved.
+            used   (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells   1811758   96.8    3871178   206.8    3871178   206.8
+Vcells 398517830 3040.5 1574043460 12009.0 1967549082 15011.3
+Fit object freed from memory.
+Warning message:
+Some Pareto k diagnostic values are too high. See help('pareto-k-diagnostic') for details.
+ 
+Warning message:
+
+1396 (28.6%) p_waic estimates greater than 0.4. We recommend trying loo instead. 
+
+Computed from 40000 by 4889 log-likelihood matrix
+
+         Estimate      SE
+elpd_loo -66490.1 10263.1
+p_loo     64831.1 10256.5
+looic    132980.1 20526.2
+------
+Monte Carlo SE of elpd_loo is NA.
+
+Pareto k diagnostic values:
+                         Count Pct.    Min. n_eff
+(-Inf, 0.5]   (good)     3776  77.2%   0         
+ (0.5, 0.7]   (ok)         69   1.4%   0         
+   (0.7, 1]   (bad)        86   1.8%   3         
+   (1, Inf)   (very bad)  958  19.6%   0         
+See help('pareto-k-diagnostic') for details.
+
+Computed from 40000 by 4889 log-likelihood matrix
+
+             Estimate         SE
+elpd_waic -16986842.7 12836347.4
+p_waic     16985183.8 12836344.4
+waic       33973685.4 25672694.7
+
+1396 (28.6%) p_waic estimates greater than 0.4. We recommend trying loo instead. 
+LOO and WAIC saved.
+            used   (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells   1812513   96.8    3871178   206.8    3871178   206.8
+Vcells 202951134 1548.4 1511145722 11529.2 1967549082 15011.3
+y_pred saved.
+          used (Mb) gc trigger   (Mb)   max used    (Mb)
+Ncells 1812503 96.8    3871178  206.8    3871178   206.8
+Vcells 7391124 56.4 1208916578 9223.4 1967549082 15011.3
+Posterior saved.
+=== Done: 2-RDM-SVR-H ===
