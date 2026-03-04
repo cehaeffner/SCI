@@ -6,52 +6,44 @@ data {
   real<lower=0> gain[nt];
   real<lower=0> pgain[nt];
   real cert[nt];
-  real<lower=0> alott[nt];           // ambiguity level for each trial
+  real<lower=0> alott[nt];
   int<lower=0, upper=1> gamble[nt];
 }
 
 parameters {
-  // Hyperparameters
-  real am;          // alpha mu (risk preference)
-  real gm;          // gamma mu (stochasticity)
-  real bm;          // beta mu (ambiguity aversion)
+  real am;
+  real gm;
+  real bm;
   real<lower=0> as;
   real<lower=0> gs;
   real<lower=0> bs;
-
-  // Raw parameters (non-centered)
   vector[ns] alph_raw;
   vector[ns] gamma_raw;
   vector[ns] beta_raw;
 }
 
 transformed parameters {
-  vector<lower=0>[ns] alph  = exp(am + as * alph_raw);   // risk preference
-  vector<lower=0>[ns] gamma = exp(gm + gs * gamma_raw);  // stochasticity
-  vector[ns] beta = bm + bs * beta_raw;                  // ambiguity aversion (can be negative)
+  vector<lower=0>[ns] alph  = exp(am + as * alph_raw);
+  vector<lower=0>[ns] gamma = exp(gm + gs * gamma_raw);
+  vector[ns] beta = bm + bs * beta_raw;
 }
 
 model {
-  // Hyperpriors
   am ~ normal(log(0.65), 1.0);
   gm ~ normal(0.0, 1.0);
   bm ~ normal(0.65, 1.0);
   as ~ lognormal(0.0, 1.0);
   gs ~ lognormal(0.0, 1.0);
   bs ~ lognormal(0.0, 1.0);
-
-  // Raw priors
   alph_raw  ~ normal(0.0, 1.0);
   gamma_raw ~ normal(0.0, 1.0);
   beta_raw  ~ normal(0.0, 1.0);
-
-  // Local variables
-  real svSafe;
-  real svGamble;
-  real adjustedProb;
-
   for (t in 1:nt) {
-    int sid = subid[t];
+    int sid;
+    real svSafe;
+    real svGamble;
+    real adjustedProb;
+    sid          = subid[t];
     svSafe       = pow(cert[t], alph[sid]);
     adjustedProb = fmin(1.0, fmax(0.001, pgain[t] - beta[sid] * (alott[t] / 2.0)));
     svGamble     = adjustedProb * pow(gain[t], alph[sid]);
