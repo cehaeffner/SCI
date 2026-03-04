@@ -29,6 +29,10 @@ if (is_rdm &  is_svr)  stan_file <- "RDM-SVR-H.stan"
 if (!is_rdm & !is_svr) stan_file <- "DD-SVD-H.stan"
 if (!is_rdm &  is_svr) stan_file <- "DD-SVR-H.stan"
 
+# Dataset 3 RDM uses separate files with ambiguity aversion parameter
+if (is_rdm & !is_svr & grepl("^3-", model_name)) stan_file <- "RDM-SVD-H-3.stan"
+if (is_rdm &  is_svr & grepl("^3-", model_name)) stan_file <- "RDM-SVR-H-3.stan"
+
 # JSON files are shared between SVD and SVR for the same dataset/task
 # e.g. 1-DD-SVD-H and 1-DD-SVR-H both load from 1-DD.json
 json_base <- sub("-SV[DR]-H$", "", model_name)
@@ -45,15 +49,28 @@ data_list <- jsonlite::read_json(json_file, simplifyVector = TRUE)
 cat("Data loaded:", data_list$nt, "trials,", data_list$ns, "subjects\n")
 
 # ── 5. Fit model ──────────────────────────────────────────────────────────────
+init_fn <- function() list(
+  # custom initialization for 2-RDM-SVR-H for fitting issues
+  am       = log(0.65),
+  mm       = 0.0,
+  as       = 0.5,
+  ms       = 0.5,
+  alph_raw = rep(0, data_list$ns),
+  mu_raw   = rep(0, data_list$ns)
+)
+
 fit <- stan(
+  # adjusted parameters for fitting issues with 2-RDM-SVR-H
   file    = stan_file,
   data    = data_list,
   chains  = 4,
-  iter    = 11000,
-  warmup  = 1000,
+  iter    = if (model_name == "2-RDM-SVR-H") 12000 else 11000,
+  warmup  = if (model_name == "2-RDM-SVR-H") 2000  else 1000,
   cores   = 4,
   seed    = 42,
-  control = list(adapt_delta = 0.95, max_treedepth = 12)
+  init    = if (model_name == "2-RDM-SVR-H") init_fn else "random",
+  control = if (model_name == "2-RDM-SVR-H") list(adapt_delta = 0.80, max_treedepth = 10)
+            else list(adapt_delta = 0.95, max_treedepth = 12)
 )
 
 # ── 6. Print and save summary ─────────────────────────────────────────────────
