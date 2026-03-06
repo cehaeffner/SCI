@@ -112,7 +112,22 @@ write.csv(summ, paste0(model_name, "_summary.csv"))
 cat("Summary saved.\n")
 print(gc())
 
-# ── 5. LOO — RDM ─────────────────────────────────────────────────────────────
+# ── 5. Extract and save y_pred before freeing fit ────────────────────────────
+saveRDS(extract(fit, pars = "y_pred_rdm")$y_pred_rdm, paste0(model_name, "_y_pred_rdm.rds"), compress = TRUE)
+gc()
+saveRDS(extract(fit, pars = "y_pred_dd")$y_pred_dd,   paste0(model_name, "_y_pred_dd.rds"),  compress = TRUE)
+gc()
+cat("y_pred saved.\n")
+
+# ── 6. Extract and save posterior before freeing fit ─────────────────────────
+noise_subj   <- ifelse(is_svr, "mu", "gamma")
+pars_to_keep <- c(noise_subj, "alph", "kapp", noise_par, noise_sd, "am", "as", "km", "ks")
+if (is_ds3) pars_to_keep <- c(pars_to_keep, "beta", "bm", "bs")
+saveRDS(as.array(fit, pars = pars_to_keep), paste0(model_name, "_posterior.rds"), compress = TRUE)
+gc()
+cat("Posterior saved.\n")
+
+# ── 7. LOO — RDM (extract, compute, save, free) ──────────────────────────────
 log_lik_rdm <- extract_log_lik(fit, parameter_name = "log_lik_rdm", merge_chains = FALSE)
 loo_rdm     <- loo(log_lik_rdm, moment_match = FALSE)
 waic_rdm    <- waic(extract_log_lik(fit, parameter_name = "log_lik_rdm"))
@@ -120,10 +135,10 @@ saveRDS(loo_rdm,  paste0(model_name, "_loo_rdm.rds"))
 saveRDS(waic_rdm, paste0(model_name, "_waic_rdm.rds"))
 cat("LOO/WAIC RDM saved.\n")
 print(loo_rdm)
-rm(log_lik_rdm, loo_rdm, waic_rdm)
+rm(loo_rdm, waic_rdm)
 gc()
 
-# ── 6. LOO — DD ──────────────────────────────────────────────────────────────
+# ── 8. LOO — DD (extract, compute, save, free) ───────────────────────────────
 log_lik_dd <- extract_log_lik(fit, parameter_name = "log_lik_dd", merge_chains = FALSE)
 loo_dd     <- loo(log_lik_dd, moment_match = FALSE)
 waic_dd    <- waic(extract_log_lik(fit, parameter_name = "log_lik_dd"))
@@ -131,23 +146,22 @@ saveRDS(loo_dd,  paste0(model_name, "_loo_dd.rds"))
 saveRDS(waic_dd, paste0(model_name, "_waic_dd.rds"))
 cat("LOO/WAIC DD saved.\n")
 print(loo_dd)
-rm(log_lik_dd, loo_dd, waic_dd)
+rm(loo_dd, waic_dd)
 gc()
 
-# ── 7. Save y_pred ────────────────────────────────────────────────────────────
-saveRDS(extract(fit, pars = "y_pred_rdm")$y_pred_rdm, paste0(model_name, "_y_pred_rdm.rds"), compress = TRUE)
-saveRDS(extract(fit, pars = "y_pred_dd")$y_pred_dd,   paste0(model_name, "_y_pred_dd.rds"),  compress = TRUE)
-cat("y_pred saved.\n")
-gc()
-
-# ── 8. Save posterior ─────────────────────────────────────────────────────────
-noise_subj   <- ifelse(is_svr, "mu", "gamma")
-pars_to_keep <- c(noise_subj, "alph", "kapp", noise_par, noise_sd, "am", "as", "km", "ks")
-if (is_ds3) pars_to_keep <- c(pars_to_keep, "beta", "bm", "bs")
-
-saveRDS(as.array(fit, pars = pars_to_keep), paste0(model_name, "_posterior.rds"), compress = TRUE)
+# ── 9. LOO — combined (cbind RDM and DD log_lik, then free both) ─────────────
+# extract_log_lik with merge_chains=TRUE gives [samples x trials] matrix
+log_lik_rdm_mat  <- extract_log_lik(fit, parameter_name = "log_lik_rdm", merge_chains = TRUE)
+log_lik_dd_mat   <- extract_log_lik(fit, parameter_name = "log_lik_dd",  merge_chains = TRUE)
+log_lik_comb_mat <- cbind(log_lik_rdm_mat, log_lik_dd_mat)
+loo_combined     <- loo(log_lik_comb_mat, moment_match = FALSE)
+waic_combined    <- waic(log_lik_comb_mat)
+saveRDS(loo_combined,  paste0(model_name, "_loo_combined.rds"))
+saveRDS(waic_combined, paste0(model_name, "_waic_combined.rds"))
+cat("LOO/WAIC combined saved.\n")
+print(loo_combined)
+rm(log_lik_rdm, log_lik_dd, log_lik_rdm_mat, log_lik_dd_mat, log_lik_comb_mat, loo_combined, waic_combined)
 rm(fit)
 gc()
-cat("Posterior saved.\n")
 
 cat("\n=== Done:", model_name, "===\n")
