@@ -127,7 +127,7 @@ saveRDS(as.array(fit, pars = pars_to_keep), paste0(model_name, "_posterior.rds")
 gc()
 cat("Posterior saved.\n")
 
-# ── 7. LOO — RDM (extract, compute, save, free) ──────────────────────────────
+# ── 7. LOO — RDM (extract, compute, save, free completely) ───────────────────
 log_lik_rdm <- extract_log_lik(fit, parameter_name = "log_lik_rdm", merge_chains = FALSE)
 loo_rdm     <- loo(log_lik_rdm, moment_match = FALSE)
 waic_rdm    <- waic(extract_log_lik(fit, parameter_name = "log_lik_rdm"))
@@ -135,10 +135,10 @@ saveRDS(loo_rdm,  paste0(model_name, "_loo_rdm.rds"))
 saveRDS(waic_rdm, paste0(model_name, "_waic_rdm.rds"))
 cat("LOO/WAIC RDM saved.\n")
 print(loo_rdm)
-rm(loo_rdm, waic_rdm)
-gc()
+rm(log_lik_rdm, loo_rdm, waic_rdm)
+gc(); gc()  # double gc to ensure memory is released
 
-# ── 8. LOO — DD (extract, compute, save, free) ───────────────────────────────
+# ── 8. LOO — DD (extract, compute, save, free completely) ────────────────────
 log_lik_dd <- extract_log_lik(fit, parameter_name = "log_lik_dd", merge_chains = FALSE)
 loo_dd     <- loo(log_lik_dd, moment_match = FALSE)
 waic_dd    <- waic(extract_log_lik(fit, parameter_name = "log_lik_dd"))
@@ -146,21 +146,23 @@ saveRDS(loo_dd,  paste0(model_name, "_loo_dd.rds"))
 saveRDS(waic_dd, paste0(model_name, "_waic_dd.rds"))
 cat("LOO/WAIC DD saved.\n")
 print(loo_dd)
-rm(loo_dd, waic_dd)
-gc()
+rm(log_lik_dd, loo_dd, waic_dd)
+gc(); gc()
 
-# ── 9. LOO — combined (cbind RDM and DD log_lik, then free both) ─────────────
-# extract_log_lik with merge_chains=TRUE gives [samples x trials] matrix
+# ── 9. LOO — combined (re-extract both, cbind, compute, save, free fit) ───────
 log_lik_rdm_mat  <- extract_log_lik(fit, parameter_name = "log_lik_rdm", merge_chains = TRUE)
+gc()
 log_lik_dd_mat   <- extract_log_lik(fit, parameter_name = "log_lik_dd",  merge_chains = TRUE)
 log_lik_comb_mat <- cbind(log_lik_rdm_mat, log_lik_dd_mat)
+rm(log_lik_rdm_mat, log_lik_dd_mat)
+gc()
 loo_combined     <- loo(log_lik_comb_mat, moment_match = FALSE)
 waic_combined    <- waic(log_lik_comb_mat)
 saveRDS(loo_combined,  paste0(model_name, "_loo_combined.rds"))
 saveRDS(waic_combined, paste0(model_name, "_waic_combined.rds"))
 cat("LOO/WAIC combined saved.\n")
 print(loo_combined)
-rm(log_lik_rdm, log_lik_dd, log_lik_rdm_mat, log_lik_dd_mat, log_lik_comb_mat, loo_combined, waic_combined)
+rm(log_lik_comb_mat, loo_combined, waic_combined)
 rm(fit)
 gc()
 
