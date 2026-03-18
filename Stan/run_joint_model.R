@@ -149,21 +149,52 @@ print(loo_dd)
 rm(log_lik_dd, loo_dd, waic_dd)
 gc(); gc()
 
-# ── 9. LOO — combined (re-extract both, cbind, compute, save, free fit) ───────
-log_lik_rdm_mat  <- extract_log_lik(fit, parameter_name = "log_lik_rdm", merge_chains = TRUE)
+# ── 9. LOO — combined (sum of RDM and DD LOOs; avoids huge cbind matrix) ──────
+# elpd is additive across conditionally independent trial sets,
+# so elpd_combined = elpd_rdm + elpd_dd, SE combined in quadrature.
+rm(fit)
 gc()
-log_lik_dd_mat   <- extract_log_lik(fit, parameter_name = "log_lik_dd",  merge_chains = TRUE)
-log_lik_comb_mat <- cbind(log_lik_rdm_mat, log_lik_dd_mat)
-rm(log_lik_rdm_mat, log_lik_dd_mat)
-gc()
-loo_combined     <- loo(log_lik_comb_mat, moment_match = FALSE)
-waic_combined    <- waic(log_lik_comb_mat)
+
+loo_rdm  <- readRDS(paste0(model_name, "_loo_rdm.rds"))
+loo_dd   <- readRDS(paste0(model_name, "_loo_dd.rds"))
+waic_rdm <- readRDS(paste0(model_name, "_waic_rdm.rds"))
+waic_dd  <- readRDS(paste0(model_name, "_waic_dd.rds"))
+
+elpd_combined  <- loo_rdm$estimates["elpd_loo",  "Estimate"] + loo_dd$estimates["elpd_loo",  "Estimate"]
+p_combined     <- loo_rdm$estimates["p_loo",      "Estimate"] + loo_dd$estimates["p_loo",      "Estimate"]
+se_combined    <- sqrt(loo_rdm$estimates["elpd_loo","SE"]^2   + loo_dd$estimates["elpd_loo","SE"]^2)
+looic_combined <- -2 * elpd_combined
+
+elpd_waic_combined <- waic_rdm$estimates["elpd_waic","Estimate"] + waic_dd$estimates["elpd_waic","Estimate"]
+p_waic_combined    <- waic_rdm$estimates["p_waic",   "Estimate"] + waic_dd$estimates["p_waic",   "Estimate"]
+se_waic_combined   <- sqrt(waic_rdm$estimates["elpd_waic","SE"]^2 + waic_dd$estimates["elpd_waic","SE"]^2)
+waic_combined_val  <- -2 * elpd_waic_combined
+
+loo_combined <- list(
+  estimates = matrix(
+    c(elpd_combined, se_combined,
+      p_combined,    NA,
+      looic_combined, 2*se_combined),
+    nrow = 3, ncol = 2, byrow = TRUE,
+    dimnames = list(c("elpd_loo","p_loo","looic"), c("Estimate","SE"))
+  ),
+  method = "loo_sum"
+)
+waic_combined <- list(
+  estimates = matrix(
+    c(elpd_waic_combined, se_waic_combined,
+      p_waic_combined,    NA,
+      waic_combined_val,  2*se_waic_combined),
+    nrow = 3, ncol = 2, byrow = TRUE,
+    dimnames = list(c("elpd_waic","p_waic","waic"), c("Estimate","SE"))
+  ),
+  method = "waic_sum"
+)
+
 saveRDS(loo_combined,  paste0(model_name, "_loo_combined.rds"))
 saveRDS(waic_combined, paste0(model_name, "_waic_combined.rds"))
 cat("LOO/WAIC combined saved.\n")
-print(loo_combined)
-rm(log_lik_comb_mat, loo_combined, waic_combined)
-rm(fit)
-gc()
+cat(sprintf("  elpd_loo combined: %.1f (SE %.1f)\n", elpd_combined, se_combined))
+cat(sprintf("  looic    combined: %.1f\n", looic_combined))
 
 cat("\n=== Done:", model_name, "===\n")
