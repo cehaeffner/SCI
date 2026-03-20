@@ -1,0 +1,240 @@
+Lmod Warning:
+-------------------------------------------------------------------------------
+The following dependent module(s) are not currently loaded:
+Eigen/3.3.9-GCCcore-10.2.0 (required by: R/4.2.0-foss-2020b)
+-------------------------------------------------------------------------------
+
+
+
+Loading required package: StanHeaders
+Loading required package: ggplot2
+rstan (Version 2.21.5, GitRev: 2e1f913d3ca3)
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+This is loo version 2.5.1
+- Online documentation and vignettes at mc-stan.org/loo
+- As of v2.0.0 loo defaults to 1 core but we recommend using as many as possible. Use the 'cores' argument or set options(mc.cores = NUM_CORES) for an entire session. 
+
+Attaching package: ‘loo’
+
+The following object is masked from ‘package:rstan’:
+
+    loo
+
+Fitting model: 1-Joint-SVD-H 
+Dataset:       1 
+Model type:    SVD (softmax) 
+Stan file:     Joint-SVD-H.stan 
+RDM data file: 1-RDM.json 
+DD data file:  1-DD.json 
+RDM data loaded: 33000 trials, 302 subjects
+DD data loaded:  30205 trials, 302 subjects
+
+Starting sampling...
+
+SAMPLING FOR MODEL 'Joint-SVD-H' NOW (CHAIN 1).
+
+SAMPLING FOR MODEL 'Joint-SVD-H' NOW (CHAIN 2).
+
+SAMPLING FOR MODEL 'Joint-SVD-H' NOW (CHAIN 3).
+
+SAMPLING FOR MODEL 'Joint-SVD-H' NOW (CHAIN 4).
+Chain 1: 
+Chain 1: Gradient evaluation took 0.020685 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 206.85 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 4: 
+Chain 4: Gradient evaluation took 0.020626 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 206.26 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 3: 
+Chain 3: Gradient evaluation took 0.02074 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 207.4 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+Chain 2: 
+Chain 2: Gradient evaluation took 0.020933 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 209.33 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 1: Iteration:     1 / 11000 [  0%]  (Warmup)
+Chain 4: Iteration:     1 / 11000 [  0%]  (Warmup)
+Chain 3: Iteration:     1 / 11000 [  0%]  (Warmup)
+Chain 2: Iteration:     1 / 11000 [  0%]  (Warmup)
+Chain 2: Iteration:  1001 / 11000 [  9%]  (Sampling)
+Chain 3: Iteration:  1001 / 11000 [  9%]  (Sampling)
+Chain 4: Iteration:  1001 / 11000 [  9%]  (Sampling)
+Chain 1: Iteration:  1001 / 11000 [  9%]  (Sampling)
+Chain 3: Iteration:  2100 / 11000 [ 19%]  (Sampling)
+Chain 2: Iteration:  2100 / 11000 [ 19%]  (Sampling)
+Chain 4: Iteration:  2100 / 11000 [ 19%]  (Sampling)
+Chain 1: Iteration:  2100 / 11000 [ 19%]  (Sampling)
+Chain 3: Iteration:  3200 / 11000 [ 29%]  (Sampling)
+Chain 2: Iteration:  3200 / 11000 [ 29%]  (Sampling)
+Chain 3: Iteration:  4300 / 11000 [ 39%]  (Sampling)
+Chain 4: Iteration:  3200 / 11000 [ 29%]  (Sampling)
+Chain 1: Iteration:  3200 / 11000 [ 29%]  (Sampling)
+Chain 3: Iteration:  5400 / 11000 [ 49%]  (Sampling)
+Chain 2: Iteration:  4300 / 11000 [ 39%]  (Sampling)
+Chain 4: Iteration:  4300 / 11000 [ 39%]  (Sampling)
+Chain 1: Iteration:  4300 / 11000 [ 39%]  (Sampling)
+Chain 3: Iteration:  6500 / 11000 [ 59%]  (Sampling)
+Chain 2: Iteration:  5400 / 11000 [ 49%]  (Sampling)
+Chain 3: Iteration:  7600 / 11000 [ 69%]  (Sampling)
+Chain 1: Iteration:  5400 / 11000 [ 49%]  (Sampling)
+Chain 4: Iteration:  5400 / 11000 [ 49%]  (Sampling)
+Chain 2: Iteration:  6500 / 11000 [ 59%]  (Sampling)
+Chain 3: Iteration:  8700 / 11000 [ 79%]  (Sampling)
+Chain 1: Iteration:  6500 / 11000 [ 59%]  (Sampling)
+Chain 4: Iteration:  6500 / 11000 [ 59%]  (Sampling)
+Chain 3: Iteration:  9800 / 11000 [ 89%]  (Sampling)
+Chain 2: Iteration:  7600 / 11000 [ 69%]  (Sampling)
+Chain 3: Iteration: 10900 / 11000 [ 99%]  (Sampling)
+Chain 3: Iteration: 11000 / 11000 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 2489.78 seconds (Warm-up)
+Chain 3:                13999.6 seconds (Sampling)
+Chain 3:                16489.4 seconds (Total)
+Chain 3: 
+Chain 1: Iteration:  7600 / 11000 [ 69%]  (Sampling)
+Chain 4: Iteration:  7600 / 11000 [ 69%]  (Sampling)
+Chain 2: Iteration:  8700 / 11000 [ 79%]  (Sampling)
+Chain 1: Iteration:  8700 / 11000 [ 79%]  (Sampling)
+Chain 4: Iteration:  8700 / 11000 [ 79%]  (Sampling)
+Chain 2: Iteration:  9800 / 11000 [ 89%]  (Sampling)
+Chain 1: Iteration:  9800 / 11000 [ 89%]  (Sampling)
+Chain 4: Iteration:  9800 / 11000 [ 89%]  (Sampling)
+Chain 2: Iteration: 10900 / 11000 [ 99%]  (Sampling)
+Chain 2: Iteration: 11000 / 11000 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 2390.16 seconds (Warm-up)
+Chain 2:                19509.2 seconds (Sampling)
+Chain 2:                21899.4 seconds (Total)
+Chain 2: 
+Chain 1: Iteration: 10900 / 11000 [ 99%]  (Sampling)
+Chain 1: Iteration: 11000 / 11000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 2726.63 seconds (Warm-up)
+Chain 1:                20820 seconds (Sampling)
+Chain 1:                23546.7 seconds (Total)
+Chain 1: 
+Chain 4: Iteration: 10900 / 11000 [ 99%]  (Sampling)
+Chain 4: Iteration: 11000 / 11000 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 2541.17 seconds (Warm-up)
+Chain 4:                21291.6 seconds (Sampling)
+Chain 4:                23832.8 seconds (Total)
+Chain 4: 
+
+=== Summary ===
+         mean      se_mean         sd       2.5%        25%        50%
+gm -0.2594825 0.0015140736 0.07628473 -0.4087960 -0.3108979 -0.2591857
+gs  1.3069174 0.0007606194 0.05724079  1.1984272  1.2676687  1.3054839
+am -0.3457833 0.0006057379 0.02427926 -0.3927499 -0.3623141 -0.3459163
+as  0.4209943 0.0002578180 0.01796688  0.3873010  0.4086258  0.4203524
+km -4.9736093 0.0023477249 0.09003700 -5.1490643 -5.0351817 -4.9730600
+ks  1.5820647 0.0010507319 0.07185627  1.4488528  1.5328850  1.5799369
+          75%      97.5%    n_eff     Rhat
+gm -0.2090023 -0.1081614 2538.524 1.000661
+gs  1.3444828  1.4236558 5663.390 1.000335
+am -0.3295487 -0.2973982 1606.576 1.004413
+as  0.4328082  0.4576678 4856.452 1.000110
+km -4.9117802 -4.7990110 1470.780 1.002425
+ks  1.6285187  1.7307376 4676.764 1.002247
+Summary saved.
+             used    (Mb)  gc trigger     (Mb)    max used     (Mb)
+Ncells    2597202   138.8     5803580    310.0     5803580    310.0
+Vcells 5659601426 43179.4 16159267442 123285.5 22358770430 170583.9
+             used    (Mb)  gc trigger     (Mb)    max used     (Mb)
+Ncells    2663552   142.3     5803580    310.0     5803580    310.0
+Vcells 5659603013 43179.4 16159267442 123285.5 22358770430 170583.9
+             used    (Mb)  gc trigger     (Mb)    max used     (Mb)
+Ncells    2723964   145.5     5803580    310.0     5803580    310.0
+Vcells 5659603013 43179.4 16159267442 123285.5 22358770430 170583.9
+y_pred saved.
+             used    (Mb)  gc trigger     (Mb)    max used     (Mb)
+Ncells    2723964   145.5     5803580    310.0     5803580    310.0
+Vcells 5659603030 43179.4 16159267442 123285.5 22358770430 170583.9
+Posterior saved.
+Warning messages:
+1: Relative effective sample sizes ('r_eff' argument) not specified.
+For models fit with MCMC, the reported PSIS effective sample sizes and 
+MCSE estimates will be over-optimistic. 
+2: Some Pareto k diagnostic values are too high. See help('pareto-k-diagnostic') for details.
+ 
+Warning message:
+
+122 (0.4%) p_waic estimates greater than 0.4. We recommend trying loo instead. 
+LOO/WAIC RDM saved.
+
+Computed from 40000 by 33000 log-likelihood matrix
+
+         Estimate    SE
+elpd_loo -12022.7  95.8
+p_loo       438.3  12.4
+looic     24045.4 191.6
+------
+Monte Carlo SE of elpd_loo is NA.
+
+Pareto k diagnostic values:
+                         Count Pct.    Min. n_eff
+(-Inf, 0.5]   (good)     32772 99.3%   3462      
+ (0.5, 0.7]   (ok)         106  0.3%   1090      
+   (0.7, 1]   (bad)         56  0.2%   223       
+   (1, Inf)   (very bad)    66  0.2%   17        
+See help('pareto-k-diagnostic') for details.
+             used    (Mb)  gc trigger     (Mb)    max used     (Mb)
+Ncells    2729307   145.8     5803580    310.0     5803580    310.0
+Vcells 5659615089 43179.5 18615616893 142025.9 22358770430 170583.9
+             used    (Mb)  gc trigger     (Mb)    max used     (Mb)
+Ncells    2729308   145.8     5803580    310.0     5803580    310.0
+Vcells 5659615108 43179.5 18615616893 142025.9 22358770430 170583.9
+Warning messages:
+1: Relative effective sample sizes ('r_eff' argument) not specified.
+For models fit with MCMC, the reported PSIS effective sample sizes and 
+MCSE estimates will be over-optimistic. 
+2: Some Pareto k diagnostic values are too high. See help('pareto-k-diagnostic') for details.
+ 
+Warning message:
+
+432 (1.4%) p_waic estimates greater than 0.4. We recommend trying loo instead. 
+LOO/WAIC DD saved.
+
+Computed from 40000 by 30205 log-likelihood matrix
+
+         Estimate    SE
+elpd_loo  -9500.1 130.2
+p_loo       791.7  30.7
+looic     19000.2 260.4
+------
+Monte Carlo SE of elpd_loo is NA.
+
+Pareto k diagnostic values:
+                         Count Pct.    Min. n_eff
+(-Inf, 0.5]   (good)     28743 95.2%   2491      
+ (0.5, 0.7]   (ok)         777  2.6%   416       
+   (0.7, 1]   (bad)        373  1.2%   24        
+   (1, Inf)   (very bad)   312  1.0%   2         
+See help('pareto-k-diagnostic') for details.
+             used    (Mb)  gc trigger     (Mb)    max used     (Mb)
+Ncells    2729319   145.8     5803580    310.0     5803580    310.0
+Vcells 5659615092 43179.5 18615616893 142025.9 22358770430 170583.9
+             used    (Mb)  gc trigger     (Mb)    max used     (Mb)
+Ncells    2729320   145.8     5803580    310.0     5803580    310.0
+Vcells 5659615111 43179.5 18615616893 142025.9 22358770430 170583.9
+          used  (Mb)  gc trigger     (Mb)    max used     (Mb)
+Ncells 2052423 109.7     5803580    310.0     5803580    310.0
+Vcells 5902796  45.1 14892493515 113620.8 22358770430 170583.9
+LOO/WAIC combined saved.
+  elpd_loo combined: -21522.8 (SE 161.6)
+  looic    combined: 43045.6
+
+=== Done: 1-Joint-SVD-H ===
