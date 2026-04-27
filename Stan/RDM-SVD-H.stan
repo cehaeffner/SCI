@@ -26,7 +26,7 @@ transformed parameters {
 model {
   am ~ normal(log(0.65), 1.0);
   gm ~ normal(0.0, 1.0);
-  as ~ lognormal(0.0, 1.0);
+  as ~ lognormal(0.0, 1.0); 
   gs ~ lognormal(0.0, 1.0);
   alph_raw  ~ normal(0.0, 1.0);
   gamma_raw ~ normal(0.0, 1.0);
