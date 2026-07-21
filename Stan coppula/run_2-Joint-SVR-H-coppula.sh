@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=2-Cop-SVR-H
 #SBATCH --cpus-per-task=4
-#SBATCH --partition=day
+#SBATCH --partition=psych_day
 #SBATCH --mem=128G
 #SBATCH --time=24:00:00
 #SBATCH --output=2-Joint-SVR-H-coppula-%j.out

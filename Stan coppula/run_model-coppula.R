@@ -66,8 +66,11 @@ K <- if (is_ds3) 5 else 4
 
 # pop_mu order (SVD 4D): am, gm_g, km, gm_d
 # pop_mu order (SVD 5D): am, gm_g, bm, km, gm_d  (same for SVR with mm)
-mu_init <- if (is_ds3) c(log(0.65), 0.0, 0.65, -3.0, 0.0)
-           else        c(log(0.65), 0.0, -3.0, 0.0)
+mu_init <- if (is_ds3) {
+  c(log(0.65), 0.0, 0.65, -3.0, 0.0)
+} else {
+  c(log(0.65), 0.0, -3.0, 0.0)
+}
 
 init_fn <- function() list(
   pop_mu = mu_init,
