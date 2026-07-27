@@ -147,8 +147,9 @@ gc()
 cat("Posterior saved.\n")
 
 # ── 8. LOO — RDM (extract, compute, save, free completely) ───────────────────
-log_lik_rdm <- extract_log_lik(fit, parameter_name = "log_lik_g", merge_chains = FALSE)
-loo_rdm <- loo(log_lik_rdm, moment_match = TRUE, fit = fit, k_threshold = 0.7)    
+#log_lik_rdm <- extract_log_lik(fit, parameter_name = "log_lik_g", merge_chains = FALSE)
+#loo_rdm <- loo(log_lik_rdm, moment_match = TRUE, fit = fit, k_threshold = 0.7)    
+loo_rdm <- loo(fit, pars = "log_lik_g", moment_match = TRUE, k_threshold = 0.7)
 waic_rdm    <- waic(extract_log_lik(fit, parameter_name = "log_lik_g"))
 saveRDS(loo_rdm,  paste0(model_name, "_loo_rdm.rds"))
 saveRDS(waic_rdm, paste0(model_name, "_waic_rdm.rds"))
@@ -158,8 +159,9 @@ rm(log_lik_rdm, loo_rdm, waic_rdm)
 gc(); gc()
 
 # ── 9. LOO — DD (extract, compute, save, free completely) ────────────────────
-log_lik_dd <- extract_log_lik(fit, parameter_name = "log_lik_d", merge_chains = FALSE)
-loo_dd <- loo(log_lik_dd, moment_match = TRUE, fit = fit, k_threshold = 0.7)    
+#log_lik_dd <- extract_log_lik(fit, parameter_name = "log_lik_d", merge_chains = FALSE)
+#loo_dd <- loo(log_lik_dd, moment_match = TRUE, fit = fit, k_threshold = 0.7)   
+loo_dd <- loo(fit, pars = "log_lik_d", moment_match = TRUE, k_threshold = 0.7)
 waic_dd    <- waic(extract_log_lik(fit, parameter_name = "log_lik_d"))
 saveRDS(loo_dd,  paste0(model_name, "_loo_dd.rds"))
 saveRDS(waic_dd, paste0(model_name, "_waic_dd.rds"))
