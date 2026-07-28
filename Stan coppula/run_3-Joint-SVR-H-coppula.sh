@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH --job-name=3-Cop-SVR-H
 #SBATCH --cpus-per-task=4
-#SBATCH --partition=psych_day
-#SBATCH --mem=128G
-#SBATCH --time=24:00:00
+#SBATCH --partition=psych_week
+#SBATCH --mem=1000G
+#SBATCH --time=3-00:00:00
 #SBATCH --output=3-Joint-SVR-H-coppula-%j.out
 #SBATCH --mail-type=END,FAIL
 
